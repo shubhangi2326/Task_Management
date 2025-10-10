@@ -11,7 +11,9 @@ connectDB();
 const app = express();
 app.use(cors());
 app.use(express.json());
-
+app.use(cors({
+  origin: "https://vercel.com/shubhangi2326s-projects/task-management-onuq/FdumN5qiVzkyek4rsNPHwJdc5gXL"
+}));
 // API routes
 app.use("/api/tasks", taskRoutes);
 
