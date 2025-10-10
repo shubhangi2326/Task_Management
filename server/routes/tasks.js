@@ -1,10 +1,13 @@
-const express = require('express');
+// server/routes/tasks.js (YAHI FINAL CODE HAI)
+
+import express from 'express';
+import { getAllTasks, createTask, getTaskById, updateTask, deleteTask, updateTaskStatus } from '../controllers/taskController.js';
+import { validateTask, validateStatus } from '../middleware/validation.js';
+
 const router = express.Router();
-const { getAllTasks, createTask, getTaskById, updateTask, deleteTask, updateTaskStatus } = require('../controllers/taskController');
-const { validateTask, validateStatus } = require('../middleware/validation');
 
 router.route('/').get(getAllTasks).post(validateTask, createTask);
 router.route('/:id').get(getTaskById).put(validateTask, updateTask).delete(deleteTask);
 router.patch('/:id/status', validateStatus, updateTaskStatus);
 
-module.exports = router;
+export default router;

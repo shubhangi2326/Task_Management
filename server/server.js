@@ -1,9 +1,9 @@
-const express = require('express');
-const dotenv = require('dotenv');
-const cors = require('cors');
-const connectDB = require('./config/database');
-const taskRoutes = require('./routes/tasks');
-const errorHandler = require('./middleware/errorHandler');
+import express from 'express';
+import dotenv from 'dotenv';
+import cors from 'cors';
+import connectDB from './config/database.js';
+import taskRoutes from './routes/tasks.js';
+import errorHandler from './middleware/errorHandler.js';
 
 dotenv.config();
 connectDB();
@@ -16,5 +16,4 @@ app.use('/api/tasks', taskRoutes);
 
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+export default app;

@@ -1,6 +1,7 @@
-const { body, validationResult } = require('express-validator');
 
-const validateTask = [
+import { body, validationResult } from 'express-validator';
+
+export const validateTask = [
   body('title')
     .notEmpty().withMessage('Title is required')
     .isString().withMessage('Title must be a string')
@@ -27,7 +28,7 @@ const validateTask = [
   }
 ];
 
-const validateStatus = [
+export const validateStatus = [
     body('status')
         .notEmpty().withMessage('Status is required')
         .isIn(['pending', 'in-progress', 'completed']).withMessage('Invalid status value'),
@@ -39,5 +40,3 @@ const validateStatus = [
         next();
     }
 ];
-
-module.exports = { validateTask, validateStatus };
