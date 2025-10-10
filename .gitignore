@@ -1,0 +1,15 @@
+# Dependencies
+/client/node_modules
+/server/node_modules
+
+# Environment Variables File (Bahut Zaroori!)
+/server/.env
+/client/.env
+
+# Vite build output
+/client/dist
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
