@@ -1,8 +1,7 @@
 import axios from 'axios';
 
-const api = axios.create({
-  baseURL: '/api',
-});
+const api = axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/tasks`);
+
 
 api.interceptors.response.use(
   (response) => response,
