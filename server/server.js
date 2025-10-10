@@ -18,6 +18,8 @@ app.use("/api/tasks", taskRoutes);
 // Error handling middleware
 app.use(errorHandler);
 
-// ❌ No app.listen() on Vercel
-// ✅ Just export the app
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
 export default app;
