@@ -1,5 +1,3 @@
-// server/routes/tasks.js (YAHI FINAL CODE HAI)
-
 import express from 'express';
 import { getAllTasks, createTask, getTaskById, updateTask, deleteTask, updateTaskStatus } from '../controllers/taskController.js';
 import { validateTask, validateStatus } from '../middleware/validation.js';
