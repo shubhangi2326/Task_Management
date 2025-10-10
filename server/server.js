@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.json());
 
 // API routes
-app.use("/api", taskRoutes);
+app.use("/api/tasks", taskRoutes);
 
 // Error handling middleware
 app.use(errorHandler);
